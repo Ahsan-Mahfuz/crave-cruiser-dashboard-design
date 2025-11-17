@@ -1,6 +1,4 @@
-import { FaUsers, FaUserPlus } from "react-icons/fa";
 import { NavLink, useLocation } from "react-router-dom";
-import { FaUserGear } from "react-icons/fa6";
 import { MdDashboard, MdOutlineSettings } from "react-icons/md";
 
 import craveCrusherlogo from "../../../../public/crave-crusher-logo.svg";
@@ -10,7 +8,6 @@ import { RiArrowDownSLine, RiArrowUpSLine } from "react-icons/ri";
 
 const Sidebar = () => {
   const location = useLocation();
-  const [isUserManagementOpen, setIsUserManagementOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   const settings = [
@@ -36,22 +33,16 @@ const Sidebar = () => {
 
   const menuItems = [
     {
-      name: "Subscriptions Plan",
-      link: "/subscription-plan",
+      name: "FAQ",
+      link: "/faq",
       icon: <GrPlan />,
     },
     {
-      name: "Support",
-      link: "/support",
-      icon: <FaUserGear />,
-    },
-    {
-      name: "Make Admin",
-      link: "/make-admin",
-      icon: <FaUserPlus />,
+      name: "Manage User",
+      link: "/users",
+      icon: <GrPlan />,
     },
   ];
-  const isUserManagementActive = location.pathname.includes("/user-management");
   const isSettingsActive = location.pathname.includes("/settings");
 
   return (
@@ -65,8 +56,8 @@ const Sidebar = () => {
         <NavLink
           to={dashBoard?.link}
           className={({ isActive }) =>
-            `flex items-center py-3 rounded-3xl my-1 pl-6 hover:bg-gray-400 cursor-pointer hover:text-white ${
-              isActive ? "bg-gray-600 text-white" : ""
+            `flex items-center py-3 rounded-3xl my-1 pl-6 hover:!bg-[#6C63FF] cursor-pointer hover:text-white ${
+              isActive ? "!bg-[#6C63FF] text-white" : ""
             }`
           }
         >
@@ -74,36 +65,14 @@ const Sidebar = () => {
           <span>{dashBoard.name}</span>
         </NavLink>
 
-        {/* User Management */}
-        <li className="my-1">
-          <div
-            className={`flex items-center justify-between py-3 rounded-3xl pl-6 cursor-pointer ${
-              isUserManagementActive
-                ? "!bg-gray-600 !text-white"
-                : "hover:bg-gray-400 hover:text-white"
-            }`}
-            onClick={() => setIsUserManagementOpen(!isUserManagementOpen)}
-          >
-            <div className="flex items-center">
-              <span className="mr-4 text-xl">
-                <FaUsers />
-              </span>
-              <span>User Management</span>
-            </div>
-            <span className="mr-4">
-              {isUserManagementOpen ? <RiArrowUpSLine /> : <RiArrowDownSLine />}
-            </span>
-          </div>
-        </li>
-
         {/* Remaining menu items */}
         {menuItems.map((item, index) => (
           <NavLink
             to={item?.link}
             key={`remaining-${index}`}
             className={({ isActive }) =>
-              `flex items-center py-3 rounded-3xl my-1 pl-6 hover:bg-gray-400 cursor-pointer hover:text-white ${
-                isActive ? "bg-gray-600 text-white" : ""
+              `flex items-center py-3 rounded-3xl my-1 pl-6 hover:!bg-[#6C63FF] cursor-pointer hover:text-white ${
+                isActive ? "!bg-[#6C63FF] text-white" : ""
               }`
             }
           >
@@ -117,8 +86,8 @@ const Sidebar = () => {
           <div
             className={`flex items-center justify-between py-3 rounded-3xl pl-6 cursor-pointer ${
               isSettingsActive
-                ? "!bg-gray-600 !text-white"
-                : "hover:bg-gray-400 hover:text-white"
+                ? "!bg-[#6C63FF] !text-white"
+                : "hover:!bg-[#6C63FF] hover:text-white"
             }`}
             onClick={() => setIsSettingsOpen(!isSettingsOpen)}
           >

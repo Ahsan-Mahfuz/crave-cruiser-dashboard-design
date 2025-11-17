@@ -11,6 +11,8 @@ import PrivacyPolicy from "../Pages/privacyPolicy/PrivacyPolicy";
 import TermsAndConditions from "../Pages/termsAndConditions/TermsAndConditions";
 import Profile from "../Pages/profile/Profile";
 import ErrorBoundary from "../ErrorBoundary";
+import FAQ from "../Pages/faq/FAQ";
+import Users from "../Pages/users/Users";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +39,14 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile />,
+      },
+      {
+        path: "/faq",
+        element: <FAQ />,
+      },
+      {
+        path: "/users",
+        element: <Users />,
       },
     ],
   },

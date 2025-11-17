@@ -3,6 +3,7 @@ import Password from "./Password";
 import { Button, Form, Image, Input, message, Upload } from "antd";
 import { UploadOutlined, LoadingOutlined } from "@ant-design/icons";
 import profileImage from "../../assets/profile.png";
+import Back from "../../components/back/Back";
 const Profile = () => {
   const [activeTab, setActiveTab] = useState("profile");
   const [form] = Form.useForm();
@@ -68,9 +69,9 @@ const Profile = () => {
     }, 2000);
   };
   return (
-    <>
-      <div>Profile Settings</div>
-      <div className="min-h-screen bg-[#F9FAFB] flex flex-col items-center py-10 font-poppins">
+    <div className="bg-[#F9FAFB] px-10 py-10">
+      <Back name="Profile Setting" />
+      <div className="min-h-screen  flex flex-col items-center py-10 font-poppins">
         <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-xl">
           <div className="flex flex-col items-center">
             <Image
@@ -171,7 +172,7 @@ const Profile = () => {
           {activeTab === "password" && <Password />}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
