@@ -51,6 +51,7 @@ const UserGrowthData = () => {
         label: "User Growth",
         data: [100, 80, 75, 78, 77, 90, 85, 80, 75, 78, 76, 79],
         backgroundColor: "#6C63FF",
+        borderRadius: 15,
         responsive: true,
         maintainAspectRatio: false,
       },

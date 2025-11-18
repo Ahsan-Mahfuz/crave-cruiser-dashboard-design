@@ -48,8 +48,11 @@ const Sidebar = () => {
 
   return (
     <div className=" w-[300px] h-[96vh] overflow-y-scroll px-3">
-      <div>
-        <img src={craveCrusherlogo} alt="car-verification-icon" />
+      <div className="flex items-center justify-center flex-col">
+        <img src={craveCrusherlogo} alt="crave-icon" />
+        <div className="text-2xl font-poppins text-[#6C63FF] font-semibold">
+          Crave Crusher
+        </div>
       </div>
 
       <ul className="mt-10">
