@@ -2,9 +2,10 @@ import { NavLink, useLocation } from "react-router-dom";
 import { MdDashboard, MdOutlineSettings } from "react-icons/md";
 
 import craveCrusherlogo from "../../../../public/crave-crusher-logo.svg";
-import { GrPlan } from "react-icons/gr";
 import { useState } from "react";
 import { RiArrowDownSLine, RiArrowUpSLine } from "react-icons/ri";
+import { FaQuora } from "react-icons/fa";
+import { CiUser } from "react-icons/ci";
 
 const Sidebar = () => {
   const location = useLocation();
@@ -35,12 +36,12 @@ const Sidebar = () => {
     {
       name: "FAQ",
       link: "/faq",
-      icon: <GrPlan />,
+      icon: <FaQuora />,
     },
     {
       name: "Manage User",
       link: "/users",
-      icon: <GrPlan />,
+      icon: <CiUser />,
     },
   ];
   const isSettingsActive = location.pathname.includes("/settings");

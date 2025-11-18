@@ -13,6 +13,7 @@ import Profile from "../Pages/profile/Profile";
 import ErrorBoundary from "../ErrorBoundary";
 import FAQ from "../Pages/faq/FAQ";
 import Users from "../Pages/users/Users";
+import DashboardHome from "../Pages/dashboardHome/DashboardHome";
 
 const router = createBrowserRouter([
   {
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <PrivacyPolicy />,
+        element: <DashboardHome />,
       },
       {
         path: "/privacy-policy",

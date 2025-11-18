@@ -1,28 +1,13 @@
 import { useState } from "react";
-import { Table, Button, Modal, Image, Dropdown, Space, Input } from "antd";
-import { DownOutlined } from "@ant-design/icons";
+import { Table, Button, Modal, Image } from "antd";
 import { FaUserCircle } from "react-icons/fa";
 import { MdBlock } from "react-icons/md";
 import { IoIosWarning } from "react-icons/io";
-import Back from "../../components/back/Back";
 
-const Users = () => {
+const RecentlyJoinedUsers = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isDeleteModalVisible, setIsDeleteModalVisible] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const items = [
-    {
-      label: <div className="font-poppins">Blocked</div>,
-      key: "1",
-    },
-    {
-      label: <div className="font-poppins">Active</div>,
-      key: "2",
-    },
-  ];
 
   // -------------------------
   // Users State - Now with state management
@@ -175,48 +160,12 @@ const Users = () => {
     setIsDeleteModalVisible(false);
   };
 
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
-
   return (
-    <div className="bg-[#F9FAFB] h-screen p-10">
-      <div className="flex items-center justify-between ">
-        <Back name="User Management " />
-
-        <div className="flex gap-4 bg-white ">
-          <div className="border p-1 pt-2 rounded-md">
-            <Dropdown menu={{ items }} trigger={["click"]} className="p-2 cursor-pointer">
-              <a onClick={(e) => e.preventDefault()}>
-                <Space>
-                  All Users
-                  <DownOutlined />
-                </Space>
-              </a>
-            </Dropdown>
-          </div>
-          <div className="flex items-center gap-2">
-            <Input
-              placeholder="Search user"
-              className="w-full rounded-md border p-2 px-4"
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-        </div>
-      </div>
-
+    <div className="bg-[#F9FAFB] ">
       <div className="mb-20 bg-white p-5 mt-4">
         <Table
           columns={columns}
           dataSource={transformedData}
-          pagination={{
-            position: ["bottomCenter"],
-            current: currentPage,
-            pageSize: 10,
-            total: users.length,
-            onChange: handlePageChange,
-            showSizeChanger: false,
-          }}
           className="mt-5"
         />
 
@@ -314,4 +263,4 @@ const Users = () => {
   );
 };
 
-export default Users;
+export default RecentlyJoinedUsers;
